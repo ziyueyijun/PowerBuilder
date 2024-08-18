@@ -24,13 +24,13 @@
 
 **（1）、修改数据库连接信息（ 我这里使用的是sqlserver数据库 ）**
 
-![img](pss/1.png)
+![img](PSS/1.png)
 
 **（2）、修改子线程对象（可选）**
 
 默认子线程响应对象为  nvo_webreponse_sqlca
 
-![img](PSS/2.PNG)
+![img](PSS/2.png)
 
 如果你需要新建子线程对象，需要继承 `uo_websocket_server`，然后将以上代码修改为   
 
