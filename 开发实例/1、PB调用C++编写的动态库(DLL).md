@@ -51,20 +51,33 @@ powerbuilder.cp 文件内容如下
 #include "framework.h"
 #include "PowerBuilder.h"
 
-extern "C"
+extern "C" _declspec(dllexport)
+
+//返回数值
+int oInt()
 {
-	//返回数值
-	_declspec(dllexport) int oInt()
-	{
-		return 666;
-	}
+	return 666;
+}
 
-	//返回字符串
-	_declspec(dllexport) const char* oStr()
-	{
-		return "Zisay";
-	}
+//返回字符串
+const char* oStr()
+{
+	return "Zisay";
+}
 
+//返回计算结果
+int __stdcall oSum(int a, int b)
+{
+	int res;
+	res = a + b;
+	return res;
+}
+
+//返回计算结果写法2
+int __stdcall oSum2(int a, int b, int& res)
+{
+	res = a + b;
+	return 0;
 }
 ```
 
@@ -79,6 +92,8 @@ LIBRARY
     EXPORTS  
     oInt
     oStr
+    oSum
+    oSum2
 ```
 
 ## 6、设置活动平台为 Win32
@@ -110,6 +125,8 @@ LIBRARY
 ```c
 function int oInt()  library "demo1.dll"  alias for "oInt;ansi"
 function string oStr() library "demo1.dll" alias for "oStr;ansi"
+function int oSum(int a,int b) library "demo1.dll" alias for "oSum;ansi"
+function int oSum2(int a,int b,ref int res) library "demo1.dll" alias for "oSum2;ansi"
 ```
 
 ## 11、调用dll函数
@@ -117,13 +134,18 @@ function string oStr() library "demo1.dll" alias for "oStr;ansi"
 创建按钮控件，写入以下代码
 
 ```c
-int li_int
+int li_int,li_res
 string ls_ostr
-li_int = oInt()
-ls_ostr = oStr()
-messagebox('提示',string(li_int) + '——' +ls_ostr)
+
+li_int = oInt() //调用 oInt 方法
+messagebox('提示',' oInt 方法的返回值是：' + string(li_int))
+
+ls_ostr = oStr() //调用 oStr 方法
+messagebox('提示',' oStr 方法的返回值是：' + ls_ostr)
+
+li_int = oSum(1,1)
+messagebox('提示',' oSum 方法的返回值是：' + string(li_int))
+
+oSum2(1,1,ref li_res)
+messagebox('提示',' oSum2 方法的返回值是：' + string(li_res))
 ```
-
-调用成功
-
-![](PB调用C++编写的动态库(DLL)/16.png)
