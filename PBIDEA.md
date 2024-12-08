@@ -1,8 +1,8 @@
 # PBIDEA
 
-## 1、uo_json
+## uo_json
 
-### 1.1、基础
+### 基础
 
 ```c
 string ls_json_data,ls_json_value
@@ -61,7 +61,7 @@ js.writejsonfile("Json构造与修改.json",true,false)
 js.clear()
 ```
 
-### 1.2、将 JSON 文件导入到  DS 中
+### 将 JSON 文件导入到  DS 中
 
 ```c
 boolean bSuccess
@@ -85,7 +85,7 @@ destroy js
 GarbageCollect()
 ```
 
-### 1.3、将 JSON 文件导入到 DW 中
+### 将 JSON 文件导入到 DW 中
 
 ```c
 uo_json js,j,jarr
@@ -106,7 +106,7 @@ destroy js
 GarbageCollect()
 ```
 
-### 1.4、将  DW 数据导出为 JSON 文件
+### 将  DW 数据导出为 JSON 文件
 
 ```c
 uo_json js
@@ -132,7 +132,7 @@ mle_1.text = js.toString(true,true,true)
 destroy js
 ```
 
-### 1.5、通过 SQL 语句生成 JSON 数据
+### 通过 SQL 语句生成 JSON 数据
 
 ```c
 //连接数据库
@@ -154,7 +154,7 @@ destroy js
 GarbageCollect()
 ```
 
-### 1.6、多数据窗口生成 JSON
+### 多数据窗口生成 JSON
 
 ```c
 uo_json jsMain,jsSub
@@ -189,7 +189,7 @@ mle_1.text = jsMain.toString(TRUE,false,TRUE)
 destroy jsMain
 ```
 
-### 1.7、压缩与解压缩
+### 压缩与解压缩
 
 ```c
 uo_json js
@@ -210,7 +210,7 @@ MessageBox("","正常大小"+ string(len(ls_text)) +",压缩大小:"+string(len(
 destroy js
 ```
 
-### 1.8、导出指定列
+### 导出指定列
 
 ```c
 uo_json  js
@@ -229,7 +229,7 @@ mle_1.text = js.toString(true,false)
 destroy js
 ```
 
-### 1.9、XML 生成 JSON
+### XML 生成 JSON
 
 ```c
 uo_json  json
@@ -246,7 +246,7 @@ json.dwImportJson(dw_1)
 destroy json
 ```
 
-### 1.10、JSON 转 数组
+### JSON 转 数组
 
 ```c
 string ls_json
@@ -267,7 +267,7 @@ mle_1.text = js.ToString(true,false,true)
 destroy  js
 ```
 
-### 1.11、生成父子结构 JSON
+### 生成父子结构 JSON
 
 ```c
 uo_json js,jsTree
@@ -286,7 +286,7 @@ destroy js
 destroy jsTree
 ```
 
-### 1.12、数组解析
+### 数组解析
 
 ```c
 uo_json js
@@ -313,9 +313,9 @@ destroy jsarr
 destroy jsarr2
 ```
 
-## 2、uo_xml
+## uo_xml
 
-### 2.1、获取节点
+### 获取节点
 
 ```c
 //方法1
@@ -368,7 +368,7 @@ end if
 destroy xml
 ```
 
-### 2.2、获取字符串
+### 获取字符串
 
 ```c
 uo_xml xml
@@ -381,7 +381,7 @@ messagebox('',xml.ToString(true))
 destroy xml
 ```
 
-### 2.3、保存 XML 文件
+### 保存 XML 文件
 
 ```c
 uo_xml xml
@@ -397,7 +397,7 @@ end if
 destroy xml
 ```
 
-### 2.4、JSON 生成 XML
+### JSON 生成 XML
 
 ```c
 uo_xml xml
@@ -414,7 +414,7 @@ destroy js
 destroy xml
 ```
 
-### 2.5、将 XML 文件导入到 DW 中
+### 将 XML 文件导入到 DW 中
 
 ```c
 long ll_count
@@ -432,7 +432,7 @@ messagebox('',ll_count)
 GarbageCollect()
 ```
 
-### 2.6、清空 XML
+### 清空 XML
 
 ```c
 uo_xml xml
@@ -448,7 +448,7 @@ destroy xml
 dw_1.dataobject =  ""
 ```
 
-### 2.7、构造 XML
+### 构造 XML
 
 ```c
 //方法1
@@ -489,9 +489,9 @@ messagebox('提示',xml.toString())
 destroy xml
 ```
 
-## 3、uo_httpclient
+## uo_httpclient
 
-### 1、文件下载
+### 文件下载
 
 方法1：
 
@@ -517,7 +517,7 @@ destroy ht_1
 messagebox('',ht_1.FromUtf8(blbData))
 ```
 
-### 2、文件上传
+### 文件上传
 
 ```c
 uo_httpclient ht_1
@@ -540,7 +540,7 @@ messagebox('',ht_1.response.text)
 destroy ht_1
 ```
 
-### 3、post请求
+### post请求
 
 方法1：发送JSON对象（POST）
 
@@ -604,7 +604,7 @@ end if
 destroy ht_1
 ```
 
-### 4、get请求
+### get请求
 
 方法1：发送get请求
 
@@ -662,7 +662,7 @@ messagebox('',ht_1.response.text)
 messagebox('',string( ht_1.response.errtext))
 ```
 
-### 5、设置请求头
+### 设置请求头
 
 ```c
 uo_httpclient ht_1
@@ -694,7 +694,7 @@ end if
 destroy ht_1
 ```
 
-### 6、表单请求
+### 表单请求
 
 ```c
 uo_httpclient ht_1
@@ -714,7 +714,7 @@ messagebox('',ht_1.response.text)
 destroy ht_1
 ```
 
-### 7、数据窗口请求
+### 数据窗口请求
 
 ```c
 //1、数据窗口
@@ -743,9 +743,9 @@ messagebox('datastore',ht_1.response.text)
 destroy ds
 ```
 
-## 4、uo_curl
+## uo_curl
 
-### 1、post请求
+### post请求
 
 方法1：
 
@@ -826,7 +826,7 @@ messagebox('header',curl.response.headers.toString(true,false,true))
 destroy curl
 ```
 
-### 2、get请求
+### get请求
 
 方法1：
 
@@ -860,7 +860,7 @@ messagebox('header',curl.response.headers.toString(true,false,true))
 destroy curl
 ```
 
-### 3、文件上传
+### 文件上传
 
 ```c
 uo_curl curl
@@ -889,7 +889,7 @@ messagebox('header',curl.response.headers.toString(true,false,true))
 destroy curl
 ```
 
-### 4、文件下载
+### 文件下载
 
 方法1：
 
@@ -948,9 +948,9 @@ curl_async.start_task()
 destroy curl_async
 ```
 
-## 5、uo_zip
+## uo_zip
 
-### 1、压缩
+### 压缩
 
 ```c
 string is_password
@@ -987,7 +987,7 @@ zip.close()
 destroy zip
 ```
 
-### 2、解压缩
+### 解压缩
 
 ```c
 string is_password
@@ -1012,11 +1012,11 @@ zip.close()
 destroy zip
 ```
 
-## 6、uo_string
+## uo_string
 
-### 6.1、基础使用
+### 基础使用
 
-#### 6.1.1、字符串拼接
+#### 字符串拼接
 
 ```c
 long ll_start,ll_end
@@ -1034,7 +1034,7 @@ str.append(33," {:02X}")
 messagebox('',str.ToString())
 ```
 
-#### 6.1.2、字符串判断是否为NULL
+#### 字符串判断是否为NULL
 
 ```c
 uo_string str
@@ -1056,7 +1056,7 @@ else
 end if
 ```
 
-#### 6.1.3、重置字符串长度
+#### 重置字符串长度
 
 ```c
 uo_string str
@@ -1068,7 +1068,7 @@ str.Resize(3)
 MessageBox("",str.toString())
 ```
 
-#### 6.1.4、字符串格式
+#### 字符串格式
 
 ```c
 //示例1
@@ -1094,7 +1094,7 @@ str.format("blob: {}" , b)
 messagebox('',str.toString())
 ```
 
-#### 6.1.5、字符串颠倒顺序
+#### 字符串颠倒顺序
 
 ```c
 uo_string str
@@ -1105,7 +1105,7 @@ str.Reverse()
 MessageBox("",str.toString( ))
 ```
 
-#### 6.1.6、字符串查找
+#### 字符串查找
 
 ```c
 long ll_pos
@@ -1119,7 +1119,7 @@ ll_pos = str.lastpos("bc",0,TRUE)
 MessageBox("","pos : " + string(ll_pos))
 ```
 
-#### 6.1.7、字符串截取
+#### 字符串截取
 
 ```c
 long ll_pos
@@ -1134,7 +1134,7 @@ ls_str = str.substr(8,3)
 MessageBox("",ls_str)
 ```
 
-#### 6.1.8、字符串替换
+#### 字符串替换
 
 ```c
 int n
@@ -1149,7 +1149,7 @@ str.replace(9,4,"[hello]")
 messagebox('2',str.toString())
 ```
 
-#### 6.1.9、字符串插入
+#### 字符串插入
 
 ```c
 uo_string str
@@ -1159,7 +1159,7 @@ str.InsertStr(5,"[hello]").InsertStr(0,"[head]")
 messagebox('',str.toString())
 ```
 
-#### 6.1.10、字符串切割
+#### 字符串切割
 
 ```c
 long i,ll_Count
@@ -1175,7 +1175,7 @@ for i = 1 to ll_Count
 next
 ```
 
-#### 6.1.11、字符串进制转换
+#### 字符串进制转换
 
 ```c
 uo_string str
@@ -1193,7 +1193,7 @@ if str.ToNumber(16,ref ll_v) then
 end if
 ```
 
-#### 6.1.12、地址引用
+#### 地址引用
 
 ```c
 1、定义dll
@@ -1209,9 +1209,9 @@ messagebox('地址',str.GetAddress())
 MessageBox("窗口",str.toString())
 ```
 
-### 6.2、大文本处理
+### 大文本处理
 
-#### 6.2.1、按行读取
+#### 按行读取
 
 ```c
 long i,ll_lineCount
@@ -1227,7 +1227,7 @@ for i = 1 to ll_lineCount
 next
 ```
 
-#### 6.2.2、一次性读取
+#### 一次性读取
 
 ```c
 uo_string str
@@ -1245,7 +1245,7 @@ if str.readFile("text_utf16.txt") then
 end if
 ```
 
-#### 6.2.3、文件写入
+#### 文件写入
 
 ```c
 uo_string str
@@ -1257,9 +1257,9 @@ str.FromString("我是utf8文件内容")
 str.WriteFile("temp2.txt",true)
 ```
 
-### 6.3、正则表达式处理
+### 正则表达式处理
 
-#### 6.3.1、搜索
+#### 搜索
 
 ```c
 uo_string str
@@ -1286,7 +1286,7 @@ if str.regexSearch(1,pat,ref ls_items[],ref ll_pos[],ref ll_len[]) then
 end if
 ```
 
-#### 6.3.2、匹配
+#### 匹配
 
 ```c
 uo_string str
@@ -1313,7 +1313,7 @@ if str.regexMatch(pat,ref ls_items[],ref ll_pos[],ref ll_len[]) then
 end if
 ```
 
-#### 6.3.3、替换
+#### 替换
 
 ```c
 uo_string str

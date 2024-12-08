@@ -2,19 +2,19 @@
 
 ## 1、新建工程
 
-![](2、Vc++6.0/1.png)
+![](Vc++6.0/1.png)
 
 ## 2、创建 DLL 的类型
 
-![](2、Vc++6.0/2.png)
+![](Vc++6.0/2.png)
 
 ## 3、切换到 FileView 页面
 
-![](2、Vc++6.0/3.png)
+![](Vc++6.0/3.png)
 
 ## 4、在 PowerBuilder.cpp 下编写以下代码
 
-![](2、Vc++6.0/4.png)
+![](Vc++6.0/4.png)
 
 ```c
 //在这里写入以下代码
@@ -52,7 +52,7 @@ int __stdcall oSum2(int a, int b, int& res)
 
 ## 5、在 PowerBuilder.def 定义导出的函数名称
 
-![](2、Vc++6.0/5.png)
+![](Vc++6.0/5.png)
 
 ```c
 	oInt
@@ -65,11 +65,11 @@ int __stdcall oSum2(int a, int b, int& res)
 
 > 注：编译出来的 dll 文件在项目根目录下的 Debug 文件夹
 
-![](2、Vc++6.0/6.png)
+![](Vc++6.0/6.png)
 
 ## 7、在 PB 中定义外部动态库
 
-![](2、Vc++6.0/7.png)
+![](Vc++6.0/7.png)
 
 ```c
 function int oInt()  library "PowerBuilder.dll"  alias for "oInt;ansi"

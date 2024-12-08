@@ -1,16 +1,16 @@
 # PSS
 
-## 1、PSS 能干什么？
+## PSS 能干什么？
 
 它同时支持web server 和 websocket server。只要你会写PB程序，就可以使用 websuite 套件，用你的PB代码(PowerScript)轻松写出你的websocket server或 web server。只要有PowerBuilder就行，不再需要考虑IIS、布署、C#、JAVA这些伤脑筋的东西，仅仅PB，就能搞定一切。
 
-## 2、PSS 如何布署？
+## PSS 如何布署？
 
 想多了，不需要你想的那些布署。
 
 就和普通PB程序一样，你写好程序，需要你做的仅仅是：编译成 EXE程序，运行你的EXE程序，一切就搞定了。
 
-## 3、PSS 如何开发
+## PSS 如何开发
 
 > 注意：如果 start server(sqlca) 报错
 >
@@ -22,11 +22,11 @@
 
 打开 pbidea—>web.pbl——>uo_tabpage_pss_server——>start server（sqlca） 按钮
 
-**（1）、修改数据库连接信息（ 我这里使用的是sqlserver数据库 ）**
+**1、修改数据库连接信息（ 我这里使用的是sqlserver数据库 ）**
 
 ![img](PSS/1.png)
 
-**（2）、修改子线程对象（可选）**
+**2、修改子线程对象（可选）**
 
 默认子线程响应对象为  nvo_webreponse_sqlca
 
@@ -38,17 +38,17 @@
 jsParam.set("object","你继承的子线程对象名称")
 ```
 
-**（3）、启动 PSS 并打开浏览器进行测试**
+**3、启动 PSS 并打开浏览器进行测试**
 
 ![img](PSS/3.png)
 
-**（4）、测试 web api json 接口**
+**4、测试 web api json 接口**
 
 ![img](PSS/4.png)
 
 可以看到正常返回了 json 数据，那么我们应该怎么写一个自己的接口与PB交互呢？
 
-## 4、PSS 如何与PB交互
+## PSS 如何与PB交互
 
 打开 webapi_json.html 文件
 

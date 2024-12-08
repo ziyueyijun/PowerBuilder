@@ -1,10 +1,10 @@
 # FDW
 
-## 1、基础
+## 基础
 
-（1）、先从网上下载一个html网站模板，放到fdw\res\html目录下，记得要先把之前的页面删除
+先从网上下载一个html网站模板，放到fdw\res\html目录下，记得要先把之前的页面删除
 
-（2）、假设你下载的html模板默认首页是index.html。然后我们用PB打开fdw中的demo.pbl，打开w_login下的open事件
+假设你下载的html模板默认首页是index.html。然后我们用PB打开fdw中的demo.pbl，打开w_login下的open事件
 
 将以下代码中的Login.html
 
@@ -18,7 +18,7 @@ ln_hs.of_init(this,luo_mb,"fdw2://fdw/res/html/logon.html","fdw2.zip","fdw2demo"
 ln_hs.of_init(this,luo_mb,"fdw2://fdw/res/html/index.html","fdw2.zip","fdw2demo")
 ```
 
-（3）、然后运行程序，你就可以看到一个网页版的PB程序了。
+然后运行程序，你就可以看到一个网页版的PB程序了。
 
 **问题1：为什么w_logn窗口里什么都没有？我这个事件应该写到哪里？应该怎么写呢？**
 
@@ -140,11 +140,11 @@ document.getElementById("psd").value
 
 这样分析一下，是不是瞬间就明白了呢？如果还不明白，就先去学JS吧
 
-## 2、PB 调用 JS
+## PB 调用 JS
 
-### 2.1、PB 调用 JS 函数
+### PB 调用 JS 函数
 
-(1)、在JS中创建func_test函数
+1、在JS中创建func_test函数
 
 ```javascript
 <script>
@@ -154,23 +154,23 @@ document.getElementById("psd").value
 <script>
 ```
 
-(2)、在PB调用js中的func_test方法
+2、在PB调用js中的func_test方法
 
 ```c
 uo_1.mbRunJS("func_test('1','2');")
 ```
 
-### 2.2、PB  调用 JS 的 DOM 对象
+### PB  调用 JS 的 DOM 对象
 
 ```c
 uo_1.mbRunJS("document.getElementById('id').style.backgroundColor='red';)
 ```
 
-## 3、JS 调用 PB
+## JS 调用 PB
 
 **例1：**
 
-（1）、先在PB中绑定一个事件
+1、先在PB中绑定一个事件
 
 ```c
 uo_1.mbbind(w_main,’wf_test’ )   //事件或函数名称，
@@ -182,7 +182,7 @@ uo_1.mbbind(w_main,’wf_test’ )   //事件或函数名称，
 messagebox('提示','我是wf_test事件')
 ```
 
-（2）、然后直接在JS中调用此窗口下的事件
+2、然后直接在JS中调用此窗口下的事件
 
 ```javascript
 <script>
@@ -194,37 +194,37 @@ messagebox('提示','我是wf_test事件')
 
 **例2：**
 
-（1）、直接调用PB中的wf_test事件
+1、直接调用PB中的wf_test事件
 
 ```html
 <input id = "quitpb" type = "button" value=  "弹窗测试"  onclick="javascript:pb.invoke('w_main.wf_test()');" />
 ```
 
-（2）、直接调用PB中的wf_test事件，并传参数
+2、直接调用PB中的wf_test事件，并传参数
 
 ```html
 <input id = "quitpb" type = "button" value=  "弹窗测试"  onclick="javascript:pb.invoke('w_main.wf_test()','参数1','参数2');"  />
 ```
 
-（3）、直接调用全局函数gf_test，并传递1个参数
+3、直接调用全局函数gf_test，并传递1个参数
 
 ```c
 pb.invoke('gf_test()','hello');
 ```
 
-（4）、触发窗口下的用户对象中的事件，并传递1个参数
+4、触发窗口下的用户对象中的事件，并传递1个参数
 
 ```c
  pb.invoke("w_main.ue_test()","参数1");
 ```
 
-（5）、直接调用窗口属性，获取窗口标题
+5、直接调用窗口属性，获取窗口标题
 
 ```html
  <input id = "quitpb" type="button" value= "title"  onclick="javascript:alert(pb.get('w_test.title');" />
 ```
 
-（6）、 直接修改窗口属性，修改窗口标题
+6、 直接修改窗口属性，修改窗口标题
 
 ```html
 <input id = "quitpb" type="button" value = "title"  onclick= "javascript:pb.set('w_page.title','我是新的窗口标题';" />
@@ -232,7 +232,7 @@ pb.invoke('gf_test()','hello');
 
 **例3：**
 
-（1）、PB控件与HTML通过DIV混合布局
+PB控件与HTML通过DIV混合布局
 
 1、先在html中创建div和embed标签，embed标签的type属性必须是application/x-fdw
 

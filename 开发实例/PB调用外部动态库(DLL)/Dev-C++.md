@@ -2,17 +2,17 @@
 
 ## 1、创建项目
 
-![](3、Dev-C++/1.png)
+![](Dev-C++/1.png)
 
 创建完成后，会看到这个页面
 
-## ![](3、Dev-C++/2.png)
+## ![](Dev-C++/2.png)
 
 ## 2、在 dllmain.c 文件中，编写以下代码
 
 > 注：可以删除自带的 HelloWorld 方法后再添加
 
-![](3、Dev-C++/3.png)
+![](Dev-C++/3.png)
 
 ```c
 //返回数值
@@ -45,7 +45,7 @@ DLLIMPORT int __stdcall oSum2(int a, int b, int *res)
 
 ## 3、在 dll.h 文件中，编写以下代码
 
-![](3、Dev-C++/4.png)
+![](Dev-C++/4.png)
 
 ```c
 DLLIMPORT int oInt();
@@ -58,15 +58,15 @@ DLLIMPORT int __stdcall oSum2(int a, int b, int *res);
 
 > 注：编译出来的 dll 文件在项目根目录可以找到
 
-![](3、Dev-C++/5.png)
+![](Dev-C++/5.png)
 
-![](3、Dev-C++/6.png)
+![](Dev-C++/6.png)
 
-![](3、Dev-C++/7.png)
+![](Dev-C++/7.png)
 
 ## 5、在 PB 中定义外部动态库
 
-![](3、Dev-C++/8.png)
+![](Dev-C++/8.png)
 
 ```c
 function int oInt()  library "Dev.dll"  alias for "oInt;ansi"
