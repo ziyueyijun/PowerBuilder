@@ -39,6 +39,6 @@ https://www.sumatrapdfreader.org/docs/Command-line-arguments
 ```c
 string ls_run,ls_filepath
 ls_filepath = getcurrentdirectory() + '\1.pdf'
-ls_run = "SumatraPdf.exe -print-to 打印机名称 -silent -print-settings 'shrink',landscape,paper=A4 " + ls_filepath
+ls_run = "SumatraPdf.exe -print-to '打印机名称' -silent -print-settings 'shrink',landscape,paper=A4 " + ls_filepath
 run(ls_run)
 ```
